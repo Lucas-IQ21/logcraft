@@ -36,4 +36,16 @@ class User {
         }
         return null;
     }
+    
+    public static function getByUsername($username) {
+        $pdo = Database::connect('logcraft');
+        $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ?");
+        $stmt->execute([$username]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+            return new User($row['id'], $row['username'], $row['password'], $pdo);
+        }
+        return null;
+    }
+
 }

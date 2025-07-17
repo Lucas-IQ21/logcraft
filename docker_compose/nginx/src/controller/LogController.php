@@ -1,9 +1,10 @@
 <?php
-require_once __DIR__ . '/../model/User.php';
+require_once __DIR__ . '/../model/Log.php';
 
 class LogController {
-    public function index() {
-        $users = User::getAll();
-        include __DIR__ . '/../vue/logs.php';
+    public static function showLogs() {
+        $logs = Log::getAll();
+        require __DIR__ . '/../vue/logs.php';
     }
 }
+
