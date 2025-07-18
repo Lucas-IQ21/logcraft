@@ -11,9 +11,24 @@ $logs = Log::getAll();
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
+    <nav class="bg-white shadow mb-8">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap gap-4 items-center justify-between">
+            <div class="text-xl font-bold text-blue-600">🧾 Journal des logs</div>
+            <div class="flex flex-wrap gap-2">
+                <button onclick="window.location.href='index.php?page=logsParsed'" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                    Voir les logs analysés
+                </button>
+                <button onclick="window.location.href='index.php?page=logs'" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+                    Voir les logs bruts
+                </button>
+                <button onclick="window.location.href='index.php?page=logout'" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                    Se déconnecter
+                </button>
+            </div>
+        </div>
+    </nav>
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-6 text-center">Logs système</h1>
-
         <div class="overflow-x-auto bg-white rounded-lg shadow">
             <table class="min-w-full divide-y divide-gray-200" id="logsTable">
                 <thead class="bg-gray-50">

@@ -24,6 +24,15 @@ switch ($uri) {
         session_destroy();
         header('Location: index.php?page=login');
         exit;
+    
+    case 'logsParsed':
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require_once 'controller/ParsedLogController.php';
+        ParsedLogController::showParsedLogs();
+        break;
 
     default:
         require 'view/404.php';
