@@ -1,0 +1,1 @@
+2025/07/17 10:41:39 [error] 387#387: *11 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 10.4.255.86, server: _, request: "GET /settings/apps/list HTTP/2.0", upstream: "fastcgi://127.0.0.1:9000", host: "10.4.249.198:8090"
