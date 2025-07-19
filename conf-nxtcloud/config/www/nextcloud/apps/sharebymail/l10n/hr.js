@@ -1,0 +1,28 @@
+OC.L10N.register(
+    "sharebymail",
+    {
+    "Shared with {email}" : "Dijeljeno s {email}",
+    "Shared with {email} by {actor}" : "{actor} dijeli s {email}",
+    "Unshared from {email}" : "Prekid dijeljenja s {email}",
+    "Unshared from {email} by {actor}" : "{actor} više ne dijeli s {email}",
+    "Password for mail share sent to {email}" : "Zaporka za dijeljenje pošte poslana je {email}",
+    "Password for mail share sent to you" : "Zaporka za dijeljenje pošte poslana je vama",
+    "You shared {file} with {email} by mail" : "Podijelili ste {file} s {email} putem pošte",
+    "{actor} shared {file} with {email} by mail" : "{actor} dijeli {file} s {email} putem pošte",
+    "You unshared {file} from {email} by mail" : "Više ne dijelite {file} s {email} putem pošte",
+    "{actor} unshared {file} from {email} by mail" : "{actor} više ne dijeli {file} s {email} putem pošte",
+    "Password to access {file} was sent to {email}" : "Zaporka za pristupanje {file} poslana je {email}",
+    "Password to access {file} was sent to you" : "Poslana vam je zaporka za pristupanje {file}",
+    "Share by mail" : "Dijelite poštom",
+    "We cannot send you the auto-generated password. Please set a valid email address in your personal settings and try again." : "Ne možemo vam poslati automatski generiranu zaporku. U osobnim postavkama postavite valjanu adresu e-pošte i pokušajte ponovo.",
+    "Failed to send share by email" : "Slanje dijeljenja putem e-pošte nije uspjelo",
+    "%1$s via %2$s" : "%1$s putem %2$s",
+    "It is protected with the following password:" : "Zaštićeno je sljedećom zaporkom:",
+    "This is the password:" : "Ovo je zaporka:",
+    "You can choose a different password at any time in the share dialog." : "U dijaloškom okviru za dijeljenje možete u bilo kojem trenutku odabrati drugu zaporku.",
+    "Could not find share" : "Nije moguće pronaći dijeljenje",
+    "Share provider which allows you to share files by mail" : "Davatelj usluge dijeljenja koji vam omogućuje dijeljenje datoteka poštom",
+    "Send password by mail" : "Pošalji zaporku poštom",
+    "Reply to initiator" : "Odgovori pokretaču"
+},
+"nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");

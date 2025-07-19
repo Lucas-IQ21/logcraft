@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    networks:
+      - rsyslog_default
+    depends_on:
+      - nextclouddb
+      - redis
+    ports:
+      - 8090:443
+    volumes:
+      - ./config:/config
+      - /media/raid/docker/drive.mpinfo.fr/data:/data
+      - /home/user0/nextcloud-logs:/var/log/nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=kjnsfjjdjdsfndsfndskfd935Y9248
+      - MYSQL_HOST=nextclouddb
+      - REDIS_HOST=redis
+      - NEXTCLOUD_LOGFILE=/var/log/nextcloud/nextcloud.log
+
+  nextclouddb:
+    image: mariadb:lts
+    container_name: nextcloud-db
+    restart: unless-stopped
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --bind-address=0.0.0.0
+    networks:
+      - rsyslog_default
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./nextclouddb:/var/lib/mysql
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=kjnsfjjdjdsfndsfndskfd935Y9248
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: unless-stopped
+    networks:
+      - rsyslog_default
+
+networks:
+  rsyslog_default:
+    external: true
